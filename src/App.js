@@ -32,6 +32,8 @@ function PhoneBookForm(props) {
 }
 ;
 
+
+
 function Contact(props) {
   return (
     <div>
@@ -40,12 +42,33 @@ function Contact(props) {
     </div>
   )
 }
+
+// var PhoneBookList = React.createClass({
+//   render: function () {
+//       var contactNodes = this.props.data.map(function (contact) {
+//           return (
+//               <Contact name={contact.name} number={contact.number} />
+//           )
+//       });
+//       return (
+//           <div className="phoneBookList">
+//               {contactNodes}
+//           </div>
+//       )
+
+//   }
+// });
 function InformationTable(props) {
 
   const [search, setSearch] = React.useState('')
   const handleSearch = event => {
     setSearch(event.target.value)
   }
+  var contactNodes = this.props.data.map(function (contact) {
+    return (
+      <Contact name={contact.name} number={contact.number} />
+    )
+  });
   return (
     <div className="people-list">
       <div className="search">
@@ -57,9 +80,10 @@ function InformationTable(props) {
         />
       </div>
       <ul className="list">
-        {filteredPeople.map((person) => {
+        {contactNodes}
+        {/* {filteredPeople.map((person) => {
           return <Contact person={person} />
-        })}
+        })} */}
       </ul>
     </div>
 
