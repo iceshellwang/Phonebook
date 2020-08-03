@@ -108,7 +108,7 @@ function App(props) {
       <h1>PhoneBook App</h1>
       <PhoneBookForm onContactSubmit={contactSubmit} />
       <InformationTable data={data} />
-      {/* <PhoneBookForm
+      <PhoneBookForm
         onContactSubmit={this.handleContactSubmit}
         text="name"
         value={newName}
@@ -117,7 +117,7 @@ function App(props) {
         value1={newNumber}
         onChange1={ChangeClick}
         type="submit"
-      /> */}
+      />
       {/* <h2>Numbers</h2> */}
       {/* <Numbers persons={persons} /> */}
       {/* <InformationTable data={[{ name: 'alex smith', number: '12345' },
