@@ -8,19 +8,33 @@ function PhoneBookForm(props) {
 
   const nameRef = useRef(null);
   const numberRef = useRef(null);
-  function handleSubmit(e) {
-    props.preventDefault(e);
-    var name = React.findDOMNode(nameRef).value.trim();
-    var number = React.findDOMNode(numberRef).value.trim();
-    if (!name || !number) {
-      return;
-    }
-    props.onContactSubmit({ name: name, number: number });
 
-    React.findDOMNode(nameRef).value = '';
-    React.findDOMNode(numberRef).value = '';
-    return;
-  }
+
+  //   handleSubmit: function(e) {
+  //     e.preventDefault();
+  //     var name = React.findDOMNode(this.refs.name).value.trim();
+  //     var number = React.findDOMNode(this.refs.number).value.trim();
+
+  //     if (!name || !number) {
+  //       return;
+  //     }
+  //     this.props.onContactSubmit({ name: name, number: number });
+
+  //     React.findDOMNode(this.refs.name).value = '';
+  //     React.findDOMNode(this.refs.number).value = '';
+  //     return;
+  //   },
+  //   render: function() {
+  //     return (
+  //       <form className="addContactForm" onSubmit={this.handleSubmit}>
+  //         <input type="text" placeholder="Name" ref="name" />
+  //         <input type="text" placeholder="Number" ref="number" />
+  //         <button type="submit">Add Contact</button>
+  //       </form>
+  //     );
+  //   }
+  // });
+
 
   return (
     <form className="addContactForm" onSubmit={handleSubmit}>
@@ -107,6 +121,8 @@ function App(props) {
     <section>
       <h1>PhoneBook App</h1>
       <PhoneBookForm onContactSubmit={contactSubmit} />
+      <PhoneBookList data={this.props.data} />
+      {/* <PhoneBookForm onContactSubmit={contactSubmit} />
       <InformationTable data={data} />
       <PhoneBookForm
         onContactSubmit={this.handleContactSubmit}
@@ -117,7 +133,7 @@ function App(props) {
         value1={newNumber}
         onChange1={ChangeClick}
         type="submit"
-      />
+      /> */}
       {/* <h2>Numbers</h2> */}
       {/* <Numbers persons={persons} /> */}
       {/* <InformationTable data={[{ name: 'alex smith', number: '12345' },
