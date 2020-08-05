@@ -74,34 +74,6 @@ function Contact(props) {
 // });
 function InformationTable(props) {
 
-  const [search, setSearch] = React.useState('')
-  const handleSearch = event => {
-    setSearch(event.target.value)
-  }
-  var contactNodes = this.props.data.map(function (contact) {
-    return (
-      <Contact name={contact.name} number={contact.number} />
-    )
-  });
-  return (
-    <div className="people-list">
-      <div className="search">
-        <input type="text"
-          className="search_input"
-          value={this.state.search}
-          onChange={this.updateSearch.bind(this)}
-          placeholder="Enter name or lastname"
-        />
-      </div>
-      <ul className="list">
-        {contactNodes}
-        {/* {filteredPeople.map((person) => {
-          return <Contact person={person} />
-        })} */}
-      </ul>
-    </div>
-
-  )
 }
 
 
@@ -113,10 +85,10 @@ function App(props) {
   // const [newNumber, setNewNumber] = useState('');
 
 
-  function contactSubmit(contact) {
-    setData(data.push(contact)
-    )
-  }
+  // function contactSubmit(contact) {
+  //   setData(data.push(contact)
+  //   )
+  // }
   return (
     <section>
       <h1>PhoneBook App</h1>
